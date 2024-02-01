@@ -9,7 +9,7 @@ function Posts({ id, title, authorName, content }) {
       </h3>
       <h4>{title}</h4>
       <p>{content}</p>  
-      <DeletePostButton postId= {item.id} />
+      <DeletePostButton postId= {id} />
     </div>
   )
 }
