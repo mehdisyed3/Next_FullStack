@@ -29,6 +29,7 @@ export default async function Home() {
       posts.map(item => {
         return(
           <Posts
+          id={item.id}
           key={item.id}
           title={item.title}
           content={item.content}
