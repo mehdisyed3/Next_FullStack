@@ -15,22 +15,36 @@ const AddPost = () => {
     // You can perform any action with the title and content here,
     // such as sending it to a backend server or storing it locally.
 
-    try {
-      await fetch('/api/add-post',{
-        method:'POST',
-        headers:{
-          'Content-Type' : 'application/json'
-        },
-        body: JSON.stringify({title, content})
-      })
+    // try {
+    //   await fetch('/api/add-post',{
+    //     method:'POST',
+    //     headers:{
+    //       'Content-Type' : 'application/json'
+    //     },
+    //     body: JSON.stringify({title, content})
+    //   })
       
-    } catch (error) {
-      console.log('>>> ERRR',error)
-    }
+    // } catch (error) {
+    //   console.log('>>> ERRR',error)
+    // }
+
+
+  try {
+
+    fetch('/api/add-post',{
+      method:'POST',
+      headers:{ 'Content-type': 'application/json'},
+      body: JSON.stringify({title, content}) 
+    })
+    
+  } catch (error) {
+    console.log('>>> error',error)
+  }
 
     // Reset the form fields
     setTitle('');
     setContent('');
+    router.refresh()
   };
 
   return (
